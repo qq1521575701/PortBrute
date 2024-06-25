@@ -29,7 +29,7 @@
 
     
 ### 安装
-apt update && apt install docker.io -y && git clone https://github.com/qq1521575701/PortBrute.git && cd PortBrute && docker build -t PortBrute . && docker run -itd --name PortBrute PortBrute:latest
+apt update && apt install docker.io -y && git clone https://github.com/qq1521575701/PortBrute.git && cd PortBrute && docker build -t sshcrack . && docker run -itd --name PortBrute PortBrute:latest
 
 docker exec -it PortBrute /bin/bash
 
