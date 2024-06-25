@@ -39,6 +39,7 @@ sed -i 's/$/:22|SSH/' ssh.txt
 
 ### 开始
 nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 1000 -u user.txt > PortBruteLinux.log &
+
 tail -f PortBruteLinux.log
 ### 查看结果
 cat res.txt
