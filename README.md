@@ -28,7 +28,9 @@
   - [ ] 自动根据爆破的协议去选择不同的字典,更加方便
 
     
+### 安装
+apt update && apt install docker.io -y && git clone https://github.com/qq1521575701/PortBrute.git && cd PortBrute && docker build -t PortBrute . && docker run -itd --name PortBrute PortBrute:latest
 
-## 欢迎加好友
-![image](https://github.com/awake1t/HackReport/blob/main/images/WeChat.jpg)
+docker exec -it PortBrute /bin/bash
+
 
