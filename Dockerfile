@@ -10,9 +10,4 @@ RUN apt-get install -y zmap
 # Step 4: Copy all files from the current directory to /root in the container
 COPY . /root/
 
-# Specify the entrypoint or command to run when the container starts (if needed)
-# ENTRYPOINT ["/bin/bash"]
-
-# Optionally, you can set environment variables or expose ports here as well
-
-# End of Dockerfile
+WORKDIR /root
