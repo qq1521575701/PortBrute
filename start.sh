@@ -26,7 +26,7 @@ while true; do
         echo "开始扫描"
 
         # 执行 zmap 命令，保存结果到带有时间戳的文件
-        zmap -p 22 0.0.0.0/0 -N 500 -B 1M -o "ssh/${timestamp}.txt"
+        zmap -p 22 0.0.0.0/0 -N 200 -B 1M -o "ssh/${timestamp}.txt"
         echo "扫描完成，扫描结果保存到 ssh/${timestamp}.txt"
 
         # 为IP添加端口信息
@@ -40,6 +40,6 @@ while true; do
 
     else
         echo "CPU 使用率超过50%，等待10秒后重新检查"
-        sleep 10  # CPU 使用率超过50%，等待10秒后再次检查
+        sleep 1  # CPU 使用率超过50%，等待10秒后再次检查
     fi
 done
